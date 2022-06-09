@@ -1,0 +1,5 @@
+#!/bin/sh
+
+
+h=`getTime | tail -n 1`
+timedatectl set-time "$h"

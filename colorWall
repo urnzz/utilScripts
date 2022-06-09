@@ -1,0 +1,9 @@
+while getopts i: flag
+do
+    case "${flag}" in
+        i) image=${OPTARG};;
+    esac
+done
+mv $image /home/urnz/.config/wall.png
+setbg /home/urnz/.config/wall.png
+wal -i /home/urnz/.config/wall.png

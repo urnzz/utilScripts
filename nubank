@@ -1,0 +1,2 @@
+anbox launch --action=android.intent.action.MAIN --package=com.nu.production --component=br.com.nubank.app.ProxyActivity
+

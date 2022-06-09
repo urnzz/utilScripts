@@ -1,0 +1,2 @@
+sed -n 's!^Exec=/usr/bin/!!p' ~/.local/share/applications/anbox/*.desktop
+
