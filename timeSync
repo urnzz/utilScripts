@@ -1,5 +1,46 @@
 #!/bin/sh
-
-
-h=`getTime | tail -n 1`
-timedatectl set-time "$h"
+#Get full time and turn it into a sting array
+f=`getTime | tail -n 1`
+IFS=' '
+m=00
+read -a fu <<< "$f"
+#Determine month
+if [[ ${fu[1]} = "Jan" ]];
+then
+	m=01
+elif [[ ${fu[1]} = "Feb" ]];
+then
+	m=02
+elif [[ ${fu[1]} = "Mar" ]];
+then
+	m=03
+elif [[ ${fu[1]} = "Apr" ]];
+then
+	m=04
+elif [[ ${fu[1]} = "May" ]];
+then
+	m=05
+elif [[ ${fu[1]} = "Jun" ]];
+then
+	m=06
+elif [[ ${fu[1]} = "Jul" ]];
+then
+	m=07
+elif [[ ${fu[1]} = "Aug" ]];
+then
+	m=08
+elif [[ ${fu[1]} = "Sep" ]];
+then
+	m=09
+elif [[ ${fu[1]} = "Oct" ]];
+then
+	m=10
+elif [[ ${fu[1]} = "Nov" ]];
+then
+	m=11
+elif [[ ${fu[1]} = "Dec" ]];
+then
+	m=12
+fi
+fd="${fu[5]}-${m}-${fu[2]} ${fu[3]}"
+timedatectl set-time "${fd}"
