@@ -1,1 +1,2 @@
-python3 /bin/getTime.py
+t=$(curl -s https://urnz.xyz/time/index.html)
+echo "$t"
