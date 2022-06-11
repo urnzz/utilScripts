@@ -1,2 +1,23 @@
 #!/bin/sh
-python3 /bin/getDolar.py
+dw=$(curl -s https://dolarhoje.com)
+dt="\n"
+fs=$dw$dt
+dwa=()
+while [[ $fs ]]; do
+	dwa+=( "${fs%%"$dt"*}" )
+	fs=${fs#*"$dt"}
+done
+for v in ${dwa[@]}
+do
+	if [[ "$v" == *"R$"* ]]; then
+		fv+=${v}
+	fi
+done
+dwa2=()
+dt2="%20"
+fs2=$fv$dt2
+while [[ $fs2 ]]; do
+	dwa2+=( "${fs2%%"$dt2"*}" )
+	fs2=${fs2#*"$dt2"}
+done
+echo "${dwa2[3]} ${dwa2[4]}"
