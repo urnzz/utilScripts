@@ -1,6 +1,9 @@
 #Util Scripts
+
  These are just some personal use scripts.
- Iclude:
+
+ Include:
+
  - getDolar: tells dolar price in BRL
  - getTime: gets date from web
  - timeSync: sets system time properly
