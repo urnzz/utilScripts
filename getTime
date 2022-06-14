@@ -1,2 +1,2 @@
-t=$(curl -s https://urnz.xyz/time/index.html)
-echo "$t"
+#!/bin/sh
+curl -s https://urnz.xyz/time/index.html | echo "$t"
