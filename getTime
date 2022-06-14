@@ -1,2 +1,2 @@
 #!/bin/sh
-curl -s https://urnz.xyz/time/index.html | echo "$t"
+curl --silent "https://urnz.xyz/time/index.html" | tail -n 1
